@@ -5,9 +5,9 @@ import com.aklimov.data.PeopleRepositoryImpl
 import com.aklimov.data.entity.People
 import io.reactivex.Single
 
-class PeopleListVM {
+class PeopleListViewModelImpl : IPeopleListViewModel {
 
     private val repo: PeopleRepository = PeopleRepositoryImpl()
 
-    val getPeopleList: Single<List<People>> = repo.getPeoplesList()
+    override val getPeopleList: Single<List<People>> = repo.getPeoplesList()
 }

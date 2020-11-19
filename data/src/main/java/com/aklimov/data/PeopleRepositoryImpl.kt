@@ -19,5 +19,5 @@ class PeopleRepositoryImpl : PeopleRepository {
 
     private val api = retrofit.create(SwapiRemoteApi::class.java)
 
-    override fun getPeoplesList(): Single<List<People>> = api.getPeople()
+    override fun getPeoplesList(): Single<List<People>> = api.getPeople().map { it.results }
 }
